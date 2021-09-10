@@ -23,8 +23,8 @@
 
 #include <tesseract/capi.h>
 
-#include "VapourSynth4.h"
-#include "VSHelper4.h"
+#include <VapourSynth4.h>
+#include <VSHelper4.h>
 
 typedef struct OCRData {
     VSNode *node;
