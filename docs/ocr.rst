@@ -3,7 +3,7 @@ OCR
 
 A filter that performs optical character recognition on video frames.
 
-`Tesseract 3.04.00 language data files <https://github.com/tesseract-ocr/tessdata/tree/3.04.00>`_
+`Tesseract language data files <https://github.com/tesseract-ocr/tessdata/releases>`_
 are required. See the *datapath* parameter.
 
 .. function:: Recognize(clip clip[, string datapath, string language="", string[] options])
