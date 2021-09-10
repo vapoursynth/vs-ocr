@@ -237,7 +237,10 @@ static void VS_CC OCRCreate(const VSMap *in, VSMap *out, void *userData,
         VSPlugin *ocr_plugin = vsapi->getPluginByID("biz.srsfckn.ocr", core);
         const char *plugin_path = vsapi->getPluginPath(ocr_plugin);
         char *last_slash = strrchr(plugin_path, '/');
-        d.datapath = szterm(plugin_path, last_slash - plugin_path + 1);
+        const char *defpath = "tessdata/";
+        d.datapath = malloc(last_slash - plugin_path + 1 + strlen(defpath) + 1);
+        memcpy(d.datapath, plugin_path, last_slash - plugin_path + 1);
+        memcpy(d.datapath + (last_slash - plugin_path) + 1, defpath, strlen(defpath) + 1);
 #endif
     }
 
