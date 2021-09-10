@@ -220,15 +220,15 @@ static void VS_CC OCRCreate(const VSMap *in, VSMap *out, void *userData,
         }
     }
 
-    opt = vsapi->mapGetData(in, "datapath", 0, &err);
-    size = vsapi->mapGetDataSize(in, "datapath", 0, &err);
-
-    if (!err) {
-        d.datapath = szterm(opt, size);
-    }
-
     opt = vsapi->mapGetData(in, "language", 0, &err);
     size = vsapi->mapGetDataSize(in, "language", 0, &err);
+
+    if (!err) {
+        d.language = szterm(opt, size);
+    }
+
+    opt = vsapi->mapGetData(in, "datapath", 0, &err);
+    size = vsapi->mapGetDataSize(in, "datapath", 0, &err);
 
     if (!err) {
         d.language = szterm(opt, size);
